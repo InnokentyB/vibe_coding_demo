@@ -1,0 +1,43 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - heading "EquipReq" [level=1] [ref=e4]
+      - paragraph [ref=e5]: Streamlined Equipment Purchase Requests
+    - generic [ref=e6]:
+      - complementary [ref=e7]:
+        - generic [ref=e8]:
+          - heading "Submit New Request" [level=2] [ref=e9]
+          - generic [ref=e10]:
+            - generic [ref=e11]:
+              - generic [ref=e12]: Equipment Title
+              - textbox "Equipment Title" [ref=e13]:
+                - /placeholder: e.g. MacBook Pro M3
+                - text: Test E2E MacBook Pro M3
+            - generic [ref=e14]:
+              - generic [ref=e15]: Description & Justification
+              - textbox "Description & Justification" [ref=e16]:
+                - /placeholder: Why is this equipment needed?
+                - text: Needed for automated testing and CI/CD pipelines.
+            - generic [ref=e17]:
+              - generic [ref=e18]: Estimated Price ($)
+              - spinbutton "Estimated Price ($)" [ref=e19]: "2500"
+            - generic [ref=e20]:
+              - generic [ref=e21]: Urgency
+              - combobox "Urgency" [ref=e22]:
+                - option "Low - Routine Upgrade"
+                - option "Medium - Needed Soon"
+                - option "High - Blocking Work" [selected]
+            - paragraph [ref=e23]: An unexpected error occurred. Please try again.
+            - button "Submit Request" [ref=e24] [cursor=pointer]
+      - generic [ref=e25]:
+        - heading "Recent Requests" [level=2] [ref=e26]
+        - generic [ref=e27]:
+          - paragraph [ref=e28]: No equipment requests found.
+          - paragraph [ref=e29]: Submit a new request to get started.
+  - button "Open Next.js Dev Tools" [ref=e35] [cursor=pointer]:
+    - img [ref=e36]
+  - alert [ref=e39]
+```
