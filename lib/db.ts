@@ -1,26 +1,12 @@
-import Database from 'better-sqlite3';
+import { createClient } from '@supabase/supabase-js';
 import { env } from './env';
 
-const sqlite = new Database(env.DATABASE_URL, { verbose: console.log });
+const supabase = createClient(env.SUPABASE_URL, env.SUPABASE_ANON_KEY);
 
-console.log(`[DB Initialization] Connect to SQLite at ${env.DATABASE_URL}`);
-
-// Initialize the database structure if it doesn't exist
-sqlite.exec(`
-  CREATE TABLE IF NOT EXISTS requests (
-    id TEXT PRIMARY KEY,
-    title TEXT NOT NULL,
-    description TEXT NOT NULL,
-    price REAL NOT NULL,
-    urgency TEXT NOT NULL DEFAULT 'low',
-    status TEXT NOT NULL DEFAULT 'pending',
-    createdAt TEXT NOT NULL
-  )
-`);
-console.log(`[DB Initialization] Verified requests table structure`);
+console.log(`[DB Initialization] Connected to Supabase at ${env.SUPABASE_URL}`);
 
 /**
- * Returns the configured better-sqlite3 database instance.
- * @returns {Database.Database} The database instance.
+ * Returns the configured Supabase client instance.
+ * @returns The Supabase client.
  */
-export const getDb = () => sqlite;
+export const getDb = () => supabase;
